@@ -1,0 +1,18 @@
+Package: RpackageCoursera
+Type: Package
+Title: Package for Coursera course entitled Building R Packages
+Version: 0.0.1
+Author: Kévin Allan Sales Rodrigues [aut, cre] (<https://orcid.org/0000-0003-4925-5883>)
+Maintainer: Kévin Allan Sales Rodrigues <kevin.asr@outlook.com>
+Description: Coursera assignment for Coursera course entitled Building R Packages.
+License: GPL (>= 3.0)
+Depends: R (>= 3.5.0)
+Encoding: UTF-8
+LazyData: true
+Imports: dplyr, magrittr, maps, readr, tidyr
+Suggests: 
+    testthat (>= 2.1.0),
+    knitr,
+    rmarkdown
+RoxygenNote: 7.1.0
+VignetteBuilder: knitr

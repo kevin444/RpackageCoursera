@@ -1,0 +1,95 @@
+---
+title: Coursera assignment - vignette for FARS (Fatality Analysis Reporting System)
+  functions
+author: "Kévin Allan Sales Rodrigues"
+date: '2020-06-28'
+output:
+  html_document: default
+  pdf_document: default
+vignette: |
+  %\VignetteIndexEntry{Coursera assignment - vignette for FARS (Fatality Analysis Reporting System) functions} %\VignetteEngine{knitr::rmarkdown} %\VignetteEncoding{UTF-8}
+---
+
+
+## General Features of This Package
+
+The `RpackageCoursera` aims to analyze data on incidents from NHTSA (National Highway Traffic Safety Administration) (link to data https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars). This package contains a total of 5 functions: `fars_map_state`, `fars_read`, `fars_read_years`, `fars_summarize_years` and `make_filename`. At the time of reading the data, it is assumed that the files are in the NHTSA standard format.
+
+Next, this document shows how to use the 5 functions.
+
+## Function Descriptions
+
+### fars_map_state
+
+The fars_map_state function receives the number and year of the state as input and creates a graph with the location of the fatal injuries for the selected state and year.
+
+> Correct way to use the `fars_map_state` function
+```{r eval=FALSE}
+fars_map_state(2, 2013)
+```
+
+> Incorrect ways to use the `fars_map_state` function
+```{r eval=FALSE}
+fars_map_state("2013, 2")
+fars_map_state("2, 2013")
+fars_map_state("2", 2013)
+fars_map_state("2", "2013")
+fars_map_state(2, "2013")
+```
+
+### fars_read
+
+The `fars_read` function reads the FARS data and returns a dataframe.
+
+> Correct way to use the `fars_read` function
+```{r eval=FALSE}
+fars_read("data.csv") # where "data.csv" is the FARS data archive
+```
+
+### fars_read_years
+
+The `fars_read_years` function is an auxiliary function used by fars_summarize_years that reads FARS data stored as csv for the provided input years (taken as list or vector) and returns a list, for each year the corresponding element of the list will be a tibble with number of rows equal to the number of observations and two columns: MONTH and year.
+
+> Correct way to use the `fars_read_years` function
+```{r eval=FALSE}
+fars_read_years(c(2014, 2015))
+```
+
+> Incorrect ways to use the `fars_read_years` function
+```{r eval=FALSE}
+fars_read_years(c("2014, 2015"))
+fars_read_years(c("2014", 2015))
+fars_read_years(c(2014, "2015"))
+```
+
+
+### fars_summarize_years
+
+The `fars_summarize_years` function receives a list of as input, reads the respective data from the working directory and returns a summary table that contains the number of accidents grouped by year and month from the specified list of years.
+
+> Correct way to use the `fars_summarize_years` function
+```{r eval=FALSE}
+fars_summarize_years(c(2014, 2015))
+```
+
+> Incorrect ways to use the `fars_summarize_years` function
+```{r eval=FALSE}
+fars_summarize_years(c("2014, 2015"))
+fars_summarize_years(c("2014", 2015))
+fars_summarize_years(c(2014, "2015"))
+```
+
+### make_filename
+
+This function takes the year as either a string or an integer as input and returns the file name of the FARS data stored as csv and returns a file name from a table that contains a slide of data from the NHTSA FARS of desired year.
+
+
+> Correct way to use the `make_filename` function
+```{r eval=FALSE}
+make_filename("2013")
+```
+
+
+<!-- end of file -->
+
+
