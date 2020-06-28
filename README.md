@@ -1,8 +1,9 @@
 ## RpackageCoursera
 
 <!-- badges: start -->
-[(https://travis-ci.com/kevin444/RpackageCoursera.svg?branch=master)](https://travis-ci.com/kevin444/RpackageCoursera)
+[![Travis build status](https://travis-ci.com/kevin444/RpackageCoursera.svg?branch=master)](https://travis-ci.com/kevin444/RpackageCoursera)
 <!-- badges: end -->
+
 
 
 
